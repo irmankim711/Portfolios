@@ -304,23 +304,23 @@ export default function Hero3D() {
       // Phosphor Green Terminal text
       screenCtx.fillStyle = "#34d399";
       screenCtx.font = "bold 20px monospace";
-      screenCtx.fillText("IRMAN-OS // v2.6.4", 28, 48);
+      screenCtx.fillText("IRMAN-OS // v2.6.4", 28, 44);
 
       screenCtx.fillStyle = "#6ee7b7";
-      screenCtx.font = "16px monospace";
-      screenCtx.fillText("SYS: Full-Stack Engineer", 28, 88);
-      screenCtx.fillText("LOC: Malaysia (UTC+8)", 28, 116);
-      screenCtx.fillText("NET: 100% Operational", 28, 144);
+      screenCtx.font = "15px monospace";
+      screenCtx.fillText("CORE: Java · C/C++ · TypeScript", 28, 80);
+      screenCtx.fillText("SRV:  Tomcat · Linux · Docker", 28, 108);
+      screenCtx.fillText("LOC:  Malaysia (UTC+8)", 28, 136);
 
       screenCtx.fillStyle = "#94a3b8";
-      screenCtx.fillText("----------------------------", 28, 176);
+      screenCtx.fillText("----------------------------", 28, 168);
 
       screenCtx.fillStyle = "#38bdf8";
-      screenCtx.fillText("> git status", 28, 208);
+      screenCtx.fillText("> git status", 28, 198);
 
       screenCtx.fillStyle = "#a7f3d0";
-      screenCtx.fillText("On branch main: all good.", 28, 238);
-      screenCtx.fillText("Ready for collaboration.", 28, 268);
+      screenCtx.fillText("On branch main: all good.", 28, 228);
+      screenCtx.fillText("Ready for collaboration.", 28, 258);
 
       // Blinking Prompt
       screenCtx.fillStyle = "#34d399";
