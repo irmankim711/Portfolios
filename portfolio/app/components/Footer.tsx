@@ -26,7 +26,7 @@ export default function Footer() {
             <GithubIcon className="w-3.5 h-3.5" />
           </a>
           <a
-            href="https://linkedin.com/in/irmankim"
+            href="https://www.linkedin.com/in/irman-hakim-nazri-a48b62284/"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-slate-300 transition-colors"
