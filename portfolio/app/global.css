@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-main: #0b0c0e;
+    --bg-card: #111318;
+    --border-color: #1e222a;
+    --text-primary: #ededed;
+    --text-muted: #8b949e;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    overflow-x: hidden;
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+}
+
+/* Subtle, elegant scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0b0c0e;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e222a;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2d333f;
+}
+
+/* Subtle dot grid pattern (tasteful, not neon) */
+.bg-dot-pattern {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Artisan card surfaces */
+.card-surface {
+  background: #111317;
+  border: 1px solid #1c2027;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.card-surface:hover {
+  border-color: #2e3542;
+}
+
+/* Link underline effect */
+.link-hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: #3b4252;
+  transition: text-decoration-color 0.15s ease, color 0.15s ease;
+}
+
+.link-hover:hover {
+  text-decoration-color: #ededed;
+  color: #ffffff;
+}
