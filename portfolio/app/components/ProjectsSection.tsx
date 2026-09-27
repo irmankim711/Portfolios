@@ -4,119 +4,140 @@ import { GithubIcon } from "./Icons";
 interface Project {
   title: string;
   year: string;
+  category: string;
   summary: string;
   details: string;
   stack: string[];
-  githubUrl: string;
+  githubUrl?: string;
   liveUrl?: string;
 }
 
 export default function ProjectsSection() {
   const projects: Project[] = [
     {
+      title: "Lembaga Arkitek Malaysia (LAM) Portal",
+      year: "2024",
+      category: "Enterprise / Government",
+      summary: "Official regulatory portal and architect registration infrastructure for the Board of Architects Malaysia.",
+      details: "Engineered secure backend workflows, architect registry validation, and administrative services running on enterprise server infrastructure.",
+      stack: ["Java", "Apache Tomcat", "Java Frameworks", "SQL", "Enterprise Architecture"],
+      liveUrl: "https://lam.gov.my/",
+    },
+    {
+      title: "Nucleus Energy Tech Platform",
+      year: "2024",
+      category: "Corporate Web Platform",
+      summary: "Modern web architecture and corporate engineering presence for an innovative energy tech consultancy.",
+      details: "Engineered responsive full-stack architecture, asset performance optimization, and secure hosting.",
+      stack: ["Full-Stack", "Web Architecture", "UI/UX Engineering", "Cloud Hosting"],
+      liveUrl: "https://nucluesenergytech.com/",
+    },
+    {
       title: "Interactive 3D Spatial Geometry Canvas",
       year: "2025",
-      summary: "GPU-accelerated WebGL viewport for inspecting parametric 3D models and geometry meshes.",
+      category: "Graphics & WebGL",
+      summary: "GPU-accelerated WebGL viewport for inspecting parametric 3D models and computational geometry meshes.",
       details: "Built with Three.js and custom shader buffers, handling real-time lighting passes, orbit physics, and zero garbage-collection stutter.",
       stack: ["TypeScript", "Three.js", "React", "Next.js"],
       githubUrl: "https://github.com/irmankim711",
       liveUrl: "https://github.com/irmankim711",
     },
     {
-      title: "Async Task & Event Streaming Pipeline",
+      title: "Low-Latency Systems Event Worker",
       year: "2024",
+      category: "Systems & Concurrency",
       summary: "Lightweight background worker pool for distributed jobs, queue scheduling, and retry management.",
-      details: "Engineered around Redis pub/sub and in-memory ring buffers to guarantee deterministic latency under burst traffic.",
-      stack: ["Node.js", "TypeScript", "Redis", "Docker", "PostgreSQL"],
+      details: "Engineered with C / C++ and Redis pub/sub to guarantee deterministic latency under burst traffic.",
+      stack: ["C / C++", "Node.js", "Redis", "Docker", "Linux"],
       githubUrl: "https://github.com/irmankim711",
-    },
-    {
-      title: "Zero-Overhead Edge API Reverse Proxy",
-      year: "2024",
-      summary: "Fast request router and JWT authentication guard deployed across containerized clusters.",
-      details: "Features sliding-window rate limiting, cryptographic token validation, and structured request tracing.",
-      stack: ["Go / Node.js", "PostgreSQL", "Docker", "REST"],
-      githubUrl: "https://github.com/irmankim711",
-    },
-    {
-      title: "Minimalist Developer Notes & Code Snippets",
-      year: "2023",
-      summary: "Local-first markdown editor with syntax tree parsing, offline sync, and fast keyboard navigation.",
-      details: "Client-side indexedDB caching paired with optimistic updates for instant typing responsiveness.",
-      stack: ["React", "TypeScript", "Tailwind CSS", "IndexedDB"],
-      githubUrl: "https://github.com/irmankim711",
-      liveUrl: "https://github.com/irmankim711",
     },
   ];
 
   return (
-    <section id="projects" className="py-12 border-t border-[#1a1d24]">
+    <section id="projects" className="py-16 border-t border-[#1a1d24]">
       {/* Section Header */}
-      <div className="flex items-baseline justify-between mb-8">
-        <h2 className="text-lg font-medium text-white tracking-tight">Selected Work</h2>
+      <div className="flex items-baseline justify-between mb-10">
+        <div>
+          <h2 className="text-xl font-semibold text-white tracking-tight">Selected Projects</h2>
+          <p className="text-xs text-slate-400 mt-1">
+            Production systems, government infrastructure, and engineering tools.
+          </p>
+        </div>
         <a
           href="https://github.com/irmankim711"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-xs text-slate-400 hover:text-white flex items-center gap-1 transition-colors"
+          className="text-xs text-slate-400 hover:text-white flex items-center gap-1.5 transition-colors"
         >
-          <span>all repositories</span>
-          <ArrowUpRight className="w-3 h-3" />
+          <span>All repositories</span>
+          <ArrowUpRight className="w-3.5 h-3.5" />
         </a>
       </div>
 
-      {/* Editorial Project List (No boxy cards) */}
-      <div className="space-y-8">
+      {/* Structured Project List */}
+      <div className="divide-y divide-[#181a22]">
         {projects.map((project) => (
-          <div key={project.title} className="group">
-            <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-1.5">
-              <div className="flex items-baseline gap-2.5">
-                <h3 className="text-sm font-medium text-slate-100 group-hover:text-cyan-300 transition-colors">
-                  {project.title}
-                </h3>
-                <span className="text-[11px] font-mono text-slate-500">{project.year}</span>
-              </div>
+          <div
+            key={project.title}
+            className="py-7 first:pt-0 last:pb-0 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-start group"
+          >
+            {/* Left Column: Metadata */}
+            <div className="md:col-span-3 space-y-1">
+              <span className="text-xs font-mono text-slate-500 block">{project.year}</span>
+              <span className="text-[11px] font-mono text-slate-400 uppercase tracking-wider block">
+                {project.category}
+              </span>
+            </div>
 
-              <div className="flex items-center gap-3 text-xs text-slate-400">
+            {/* Middle Column: Title, Description, Stack */}
+            <div className="md:col-span-7 space-y-2">
+              <h3 className="text-base font-medium text-slate-100 group-hover:text-white transition-colors">
+                {project.title}
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+                {project.summary}
+              </p>
+              <p className="text-xs text-slate-500 leading-relaxed font-normal">
+                {project.details}
+              </p>
+              <div className="pt-2 flex flex-wrap gap-1.5">
+                {project.stack.map((tech) => (
+                  <span
+                    key={tech}
+                    className="px-2 py-0.5 rounded bg-[#13151b] border border-[#1e222a] text-[11px] font-mono text-slate-400"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Right Column: Direct Links */}
+            <div className="md:col-span-2 flex md:justify-end items-center gap-3 text-xs pt-1 md:pt-0">
+              {project.githubUrl && (
                 <a
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1 hover:text-white transition-colors"
+                  className="flex items-center gap-1.5 text-slate-400 hover:text-white transition-colors"
                   title="Source code on GitHub"
                 >
-                  <GithubIcon className="w-3 h-3" />
-                  <span>source</span>
+                  <GithubIcon className="w-3.5 h-3.5" />
+                  <span>Code</span>
                 </a>
-                {project.liveUrl && (
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1 hover:text-white transition-colors"
-                    title="Live preview"
-                  >
-                    <span>preview</span>
-                    <ArrowUpRight className="w-3 h-3" />
-                  </a>
-                )}
-              </div>
-            </div>
-
-            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-              {project.summary}
-            </p>
-            <p className="text-xs text-slate-500 mt-1 leading-relaxed">
-              {project.details}
-            </p>
-
-            <div className="mt-2.5 flex flex-wrap gap-2 text-[11px] font-mono text-slate-500">
-              {project.stack.map((item, idx) => (
-                <span key={item}>
-                  {item}
-                  {idx < project.stack.length - 1 && <span className="ml-2 text-slate-700">·</span>}
-                </span>
-              ))}
+              )}
+              {project.liveUrl && (
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1 text-slate-300 hover:text-white transition-colors"
+                  title="Visit website"
+                >
+                  <span>Visit</span>
+                  <ArrowUpRight className="w-3 h-3 text-slate-400" />
+                </a>
+              )}
             </div>
           </div>
         ))}

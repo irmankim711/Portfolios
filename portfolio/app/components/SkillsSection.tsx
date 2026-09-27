@@ -1,39 +1,53 @@
 export default function SkillsSection() {
-  const groups = [
+  const pillars = [
     {
-      category: "Languages",
-      skills: "Java, C, C++, TypeScript, JavaScript (ESNext), Python, SQL",
+      title: "Enterprise & Java",
+      description: "Scalable enterprise application servers and framework architectures.",
+      skills: ["Java (SE / EE)", "Apache Tomcat", "Java Frameworks", "Spring Boot", "RESTful APIs", "Microservices"],
     },
     {
-      category: "Backend & Systems",
-      skills: "Java Frameworks (Spring Boot / Java EE), Apache Tomcat, Node.js, Express, RESTful APIs, Redis, PostgreSQL",
+      title: "Systems & Low-Level",
+      description: "Systems programming, concurrency, and deterministic execution.",
+      skills: ["C & C++", "Memory Management", "Linux Systems", "Data Structures", "Socket Programming", "POSIX Standards"],
     },
     {
-      category: "Frontend & WebGL",
-      skills: "React 19, Next.js 16, Three.js, Tailwind CSS, Vite, State Machines",
+      title: "Full-Stack & 3D Web",
+      description: "Modern web applications, interactive WebGL, and reactive interfaces.",
+      skills: ["TypeScript", "React 19", "Next.js 16", "Three.js & WebGL", "Tailwind CSS", "State Machines"],
     },
     {
-      category: "Tooling & Infra",
-      skills: "Docker, Git & GitHub, Linux environments, Maven/Gradle, Turbopack, CI/CD",
+      title: "Data & Infrastructure",
+      description: "Relational modeling, fast caching, containers, and deployment workflows.",
+      skills: ["PostgreSQL & SQL", "Redis In-Memory", "Docker Containers", "Git & GitHub", "Maven / Gradle", "CI/CD Workflows"],
     },
   ];
 
   return (
-    <section id="stack" className="py-12 border-t border-[#1a1d24]">
-      <h2 className="text-lg font-medium text-white tracking-tight mb-6">Technical Stack</h2>
+    <section id="stack" className="py-16 border-t border-[#1a1d24]">
+      <div className="mb-10">
+        <h2 className="text-xl font-semibold text-white tracking-tight">Technical Stack</h2>
+        <p className="text-xs text-slate-400 mt-1">
+          Core languages, frameworks, and engineering disciplines utilized across production systems.
+        </p>
+      </div>
 
-      <div className="space-y-4">
-        {groups.map((group) => (
-          <div
-            key={group.category}
-            className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4 text-xs"
-          >
-            <span className="w-32 shrink-0 font-mono text-slate-400">
-              {group.category}
-            </span>
-            <span className="text-slate-300 leading-relaxed font-normal">
-              {group.skills}
-            </span>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {pillars.map((pillar) => (
+          <div key={pillar.title} className="space-y-3">
+            <h3 className="text-xs font-mono text-slate-300 uppercase tracking-wider pb-2 border-b border-[#1c1f27]">
+              {pillar.title}
+            </h3>
+            <p className="text-[11px] text-slate-500 leading-normal">
+              {pillar.description}
+            </p>
+            <ul className="space-y-1.5 pt-1">
+              {pillar.skills.map((skill) => (
+                <li key={skill} className="text-xs text-slate-300 flex items-center gap-2">
+                  <span className="w-1 h-1 rounded-full bg-slate-600" />
+                  <span>{skill}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         ))}
       </div>

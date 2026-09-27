@@ -417,8 +417,8 @@ export default function Hero3D() {
 
       {/* Subtle, minimal indicator (no box/border) */}
       <div className="absolute bottom-2 flex items-center gap-2 text-[11px] font-mono text-slate-500 pointer-events-none select-none">
-        <Move3d className="w-3.5 h-3.5 text-emerald-400/80" />
-        <span>Drag to rotate retro workstation</span>
+        <Move3d className="w-3.5 h-3.5 text-slate-400" />
+        <span>Drag to rotate 3D workstation</span>
       </div>
     </div>
   );

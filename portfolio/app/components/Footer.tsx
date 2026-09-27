@@ -10,11 +10,9 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-[#1a1d24] py-10 text-xs text-slate-500">
-      <div className="max-w-[700px] mx-auto px-5 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div className="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div>
           <span className="text-slate-400 font-medium">Irman Hakim Bin Nazri</span>
-          <span className="mx-2">·</span>
-          <span>Next.js, Three.js &amp; Tailwind</span>
         </div>
 
         <div className="flex items-center gap-4">
