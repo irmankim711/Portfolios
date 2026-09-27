@@ -49,13 +49,13 @@ export default function Home() {
               </a>
 
               <a
-                href="https://linkedin.com/in/irmankim"
+                href="https://www.linkedin.com/in/irman-hakim-nazri-a48b62284/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#12141a] hover:bg-[#1a1d25] border border-[#1e222a] text-slate-200 hover:text-white transition-colors"
               >
                 <LinkedinIcon className="w-3.5 h-3.5" />
-                <span>linkedin.com/in/irmankim</span>
+                <span>linkedin.com/in/irman-hakim-nazri</span>
                 <ArrowUpRight className="w-3 h-3 text-slate-500" />
               </a>
 

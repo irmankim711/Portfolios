@@ -24,9 +24,9 @@ export default function SocialConnectSection() {
     },
     {
       name: "LinkedIn",
-      handle: "in/irmankim",
+      handle: "in/irman-hakim-nazri",
       note: "Career background, professional experience, and recommendations.",
-      href: "https://linkedin.com/in/irmankim",
+      href: "https://www.linkedin.com/in/irman-hakim-nazri-a48b62284/",
       icon: LinkedinIcon,
     },
     {
