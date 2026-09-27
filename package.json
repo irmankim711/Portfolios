@@ -1,0 +1,10 @@
+{
+  "name": "irman-space",
+  "private": true,
+  "workspaces": [
+    "portfolio"
+  ],
+  "scripts": {
+    "build": "npm --prefix portfolio run build"
+  }
+}

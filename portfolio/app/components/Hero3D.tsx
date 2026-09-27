@@ -1,12 +1,11 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import * as THREE from "three";
-import { Move3d, Terminal } from "lucide-react";
+import { Move3d } from "lucide-react";
 
 export default function Hero3D() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [activeTab, setActiveTab] = useState<"status" | "code">("status");
 
   useEffect(() => {
     const container = containerRef.current;
@@ -283,7 +282,7 @@ export default function Hero3D() {
     // 7. Render Loop & Dynamic CRT Content Drawing
     // ----------------------------------------------------
     let animationId: number;
-    let clock = new THREE.Clock();
+    const clock = new THREE.Clock();
     let lastCanvasUpdate = 0;
 
     const renderScreenText = (time: number) => {
